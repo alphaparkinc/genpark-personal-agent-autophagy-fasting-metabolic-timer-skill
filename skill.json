@@ -1,0 +1,70 @@
+{
+  "name": "genpark-personal-agent-autophagy-fasting-metabolic-timer-skill",
+  "version": "1.0.0",
+  "title": "Autophagy Induction & Intermittent Fasting Metabolic Timer Skill",
+  "description": "Cellular autophagy index estimation, glycogen depletion kinetics, autophagy onset curve, insulin clamp proxy, and fast duration optimization. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "personal-agent",
+  "topics": [
+    "autophagy",
+    "intermittent-fasting",
+    "mitophagy",
+    "metabolism",
+    "personal-agent",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "estimate_autophagy_cellular_cleansing_index",
+      "description": "Estimate cellular autophagy and mitophagy score based on fasting hours, blood BHB, and physical exertion.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "fasting_duration_hours": {
+            "type": "number"
+          },
+          "baseline_ketone_mmol": {
+            "type": "number"
+          },
+          "activity_level": {
+            "type": "string",
+            "enum": [
+              "sedentary",
+              "moderate",
+              "intense"
+            ]
+          }
+        },
+        "required": [
+          "fasting_duration_hours"
+        ]
+      }
+    },
+    {
+      "name": "compute_optimal_fast_breaking_macro_refill",
+      "description": "Compute targeted macronutrient refuel sequence to maximize mTOR activation without digestive distress.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "hours_fasted": {
+            "type": "number"
+          },
+          "target_goal": {
+            "type": "string",
+            "enum": [
+              "muscle_synthesis",
+              "sustained_ketosis",
+              "gut_restoration"
+            ]
+          }
+        },
+        "required": [
+          "hours_fasted",
+          "target_goal"
+        ]
+      }
+    }
+  ]
+}
